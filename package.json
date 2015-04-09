@@ -1,0 +1,21 @@
+{
+  "name": "weather-text",
+  "description": "A service to text you with an image of the day's weather forecast.",
+  "version": "1.0.0",
+  "author": "Eric Lovett <etlovett@gmail.com>",
+  "homepage": "https://github.com/etlovett/weather-text",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/etlovett/weather-text"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-watch": "^4.2.4"
+  },
+  "dependencies": {
+    "twilio": "^1.11.1"
+  }
+}

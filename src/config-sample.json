@@ -1,0 +1,16 @@
+// Fill this in with your configuration and save it as src/config.json.
+{
+    "twilio": {
+        "accountSid": "",
+        "authToken": ""
+    },
+    "phoneNumbers": {
+        "from": "",
+        "to": ""
+    },
+    "location": {
+        "lat": "",
+        "long": "",
+        "zcode": ""
+    }
+}
