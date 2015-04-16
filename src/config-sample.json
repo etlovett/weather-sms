@@ -2,15 +2,18 @@
 {
     "twilio": {
         "accountSid": "",
-        "authToken": ""
+        "authToken": "",
+        "from": ""
     },
-    "phoneNumbers": {
-        "from": "",
-        "to": ""
-    },
-    "location": {
-        "lat": "",
-        "long": "",
-        "zcode": ""
-    }
+    "jobs": [{
+        "to": "",
+        "crontab": "",
+        "timezone": "",
+        "location": {
+            "name": "",
+            "lat": "",
+            "long": "",
+            "zcode": ""
+        }
+    }]
 }
