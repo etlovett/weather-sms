@@ -13,15 +13,16 @@
   "engines": {
     "iojs": "1.x"
   },
-  "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-babel": "^5.1.0",
-    "gulp-sourcemaps": "^1.5.1",
-    "gulp-watch": "^4.2.4"
+  "scripts": {
+    "postinstall": "gulp build"
   },
   "dependencies": {
     "cron": "^1.0.9",
-    "twilio": "^1.11.1",
-    "date-utils": "^1.2.16"
+    "date-utils": "^1.2.16",
+    "gulp": "^3.8.11",
+    "gulp-babel": "^5.1.0",
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-watch": "^4.2.4",
+    "twilio": "^1.11.1"
   }
 }

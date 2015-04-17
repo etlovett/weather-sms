@@ -16,6 +16,8 @@ gulp.task('build-json', function(argument){
         .pipe(gulp.dest('build'));
 });
 
+gulp.task('build', ['build-js', 'build-json']);
+
 gulp.task('default', ['build-js', 'build-json'], function() {
-    gulp.watch('src/**/*', ['build-js', 'build-json']);
+    gulp.watch('src/**/*', ['build']);
 });
