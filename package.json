@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "cron": "^1.0.9",
-    "twilio": "^1.11.1"
+    "twilio": "^1.11.1",
+    "date-utils": "^1.2.16"
   }
 }

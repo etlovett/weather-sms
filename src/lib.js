@@ -1,5 +1,7 @@
 let fs = require('fs');
 
+let dateUtils = require('date-utils');
+
 
 export function initialize(callback){
     fs.readFile(`${__dirname}/config.json`, {encoding: 'utf8'}, function(err, config){
@@ -8,10 +10,11 @@ export function initialize(callback){
 }
 
 export function sendWeather(client, fromNumber, toNumber, location){
+    let date = (new Date()).toFormat('DDD MMM D');
     client.messages.create({
         from: fromNumber,
         to: toNumber,
-        body: `Your morning weather forecast for ${location.name}.`,
+        body: `Weather forecast for ${location.name} on ${date}.`,
         mediaUrl: buildURL(location)
     }, function(err, message) {
         if (err){
