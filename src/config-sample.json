@@ -1,19 +1,21 @@
 // Fill this in with your configuration and save it as src/config.json.
 {
-    "twilio": {
-        "accountSid": "",
-        "authToken": "",
-        "from": ""
-    },
-    "jobs": [{
-        "to": "",
-        "crontab": "",
-        "timezone": "",
-        "location": {
-            "name": "",
-            "lat": "",
-            "long": "",
-            "zcode": ""
-        }
-    }]
+  "twilio": {
+    "accountSid": "",
+    "authToken": "",
+    "from": ""
+  },
+  "jobs": [
+    {
+      "to": "",
+      "crontab": "",
+      "timezone": "",
+      "location": {
+        "name": "",
+        "lat": "",
+        "long": "",
+        "zcode": ""
+      }
+    }
+  ]
 }

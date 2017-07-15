@@ -1,19 +1,17 @@
-let fs = require('fs');
+import cron from 'cron';
+import fs from 'fs';
+import twilio from 'twilio';
 
-let CronJob = require('cron').CronJob;
-let twilio = require('twilio');
-
-let {initialize, sendWeather} = require('./lib');
-
+import { initialize, sendWeather } from './lib';
 
 initialize(({twilio: twilioConfig, jobs: jobsConfig}) => {
-    let {accountSid, authToken, from: fromNumber} = twilioConfig;
-    let client = twilio(accountSid, authToken);
+  const { accountSid, authToken, from: fromNumber } = twilioConfig;
+  const client = twilio(accountSid, authToken);
 
-    jobsConfig.forEach(jobConfig => new CronJob({
-        start: true,
-        cronTime: jobConfig.crontab,
-        timeZone: jobConfig.timezone,
-        onTick: () => sendWeather(client, fromNumber, jobConfig.to, jobConfig.location)
-    }));
+  jobsConfig.forEach(jobConfig => new cron.CronJob({
+    start: true,
+    cronTime: jobConfig.crontab,
+    timeZone: jobConfig.timezone,
+    onTick: () => sendWeather(client, fromNumber, jobConfig.to, jobConfig.location),
+  }));
 });
