@@ -1,23 +1,17 @@
-const gulp = require('gulp');
+const { dest, parallel, series, src, watch } = require('gulp');
 const babel = require('gulp-babel');
-const sourcemaps = require('gulp-sourcemaps');
-const watch = require('gulp-watch');
 
-gulp.task('build-js', () => {
-  return gulp.src('src/**/*.js')
-    .pipe(sourcemaps.init())
+function buildJS() {
+  return src('src/**/*.js', { sourcemaps: true })
     .pipe(babel())
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('build'));
-});
+    .pipe(dest('build', { sourcemaps: '.' }));
+}
 
-gulp.task('build-json', () => {
-  return gulp.src('src/**/*.json')
-    .pipe(gulp.dest('build'));
-});
+function buildJSON() {
+  return src('src/**/*.json')
+    .pipe(dest('build'));
+}
 
-gulp.task('build', ['build-js', 'build-json']);
+exports.build = series(buildJS, buildJSON);
 
-gulp.task('default', ['build-js', 'build-json'], () => {
-  gulp.watch('src/**/*', ['build']);
-});
+exports.default = () => watch('src/**/*', { ignoreInitial: false }, exports.build);
